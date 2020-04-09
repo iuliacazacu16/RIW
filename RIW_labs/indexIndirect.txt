@@ -1,0 +1,260 @@
+data [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+year [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir2\fis3.txt=1}] 
+
+
+
+
+seven [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+soon [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}] 
+
+
+
+
+second [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir2\fis3.txt=1}] 
+
+
+
+
+ï»¿Indeedâ€™s [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+ï»¿While [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}] 
+
+
+
+
+regularly [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}] 
+
+
+
+
+that [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=2}, {E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+reviews [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+beat [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir2\fis3.txt=1}] 
+
+
+
+
+presence [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir2\fis3.txt=1}] 
+
+
+
+
+ten [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+different [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+which [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+tech [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+new [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}] 
+
+
+
+
+cities [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir2\fis3.txt=1}] 
+
+
+
+
+list [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+take [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}] 
+
+
+
+
+among [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+hello [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir2\dir4\fis4.txt=1}] 
+
+
+
+
+drive [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}] 
+
+
+
+
+job [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=2}] 
+
+
+
+
+next [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}] 
+
+
+
+
+regions [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}] 
+
+
+
+
+indicated [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}] 
+
+
+
+
+out [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir2\fis3.txt=1}, {E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}, {E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=2}] 
+
+
+
+
+running [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir2\fis3.txt=1}] 
+
+
+
+
+pundits [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}] 
+
+
+
+
+top [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+confirms [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+came [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+predict [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}] 
+
+
+
+
+included [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+over [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}] 
+
+
+
+
+cost [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}] 
+
+
+
+
+though [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+will [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}] 
+
+
+
+
+jobs [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=2}] 
+
+
+
+
+anytime [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}] 
+
+
+
+
+also [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+2020 [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+satisfaction [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+engineer [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir2\fis3.txt=1}, {E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+the [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}] 
+
+
+
+
+site [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+ranking [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+fueled [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir2\fis3.txt=1}] 
+
+
+
+
+to [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}] 
+
+
+
+
+front [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis1.txt=1}] 
+
+
+
+
+congestion [{E:\FACULTATE\An IV\Sem II\RIW\RIW_LAB2\RootDirectory\dir1\dir3\fis2.txt=1}] 
+
+
+
+
