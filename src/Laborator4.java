@@ -23,7 +23,7 @@ import org.jsoup.nodes.Document;
 
 import edu.smu.tspell.wordnet.*; 
 
-public class Lab3 
+public class Laborator4 
 {
 	public static boolean isProperNoun(String w)
 	{
@@ -256,12 +256,121 @@ public class Lab3
 		
 	}
 	
+	public static ArrayList<Map<String, Integer>> getIntersection(String word1, String word2, Map<String, ArrayList<Map<String, Integer>>> indexIndirect)
+	{
+		ArrayList<Map<String, Integer>> fisWord1 = new ArrayList<Map<String, Integer>>(indexIndirect.get(word1));
+		ArrayList<Map<String, Integer>> fisWord2 = new ArrayList<Map<String, Integer>>(indexIndirect.get(word2));
+		ArrayList<Map<String, Integer>> intersectia = getArrayListIntersectie( fisWord1,fisWord2 );
+		System.out.println(word1 + "\n" + fisWord1.toString());
+		System.out.println(word2 + "\n" + fisWord2.toString());
+		
+		System.out.println("Intersectia: "+ intersectia);
+		
+		return intersectia;
+	}
+	
+	public static ArrayList<Map<String, Integer>> getArrayListIntersectie(ArrayList<Map<String, Integer>> fisiereSet1, ArrayList<Map<String, Integer>> fisiereSet2){
+		ArrayList<Map<String, Integer>> intersectia = new ArrayList<Map<String, Integer>>();
+		
+		if(fisiereSet1.size() < fisiereSet2.size()) 
+		{
+			for(int i=0;i<fisiereSet1.size();i++)
+			{
+				Map<String, Integer> fis = fisiereSet1.get(i);
+				if( fisiereSet2.contains(fis) ) {
+					intersectia.add(fis);
+				}
+			}
+		}else {
+			for(int i=0;i<fisiereSet2.size();i++)
+			{
+				Map<String, Integer> fis = fisiereSet2.get(i);
+				if( fisiereSet1.contains(fis) ) {
+					intersectia.add(fis);
+				}
+			}
+		}
+		return intersectia;
+	}
+	
+	public static ArrayList<Map<String, Integer>>  getReunion(String word1, String word2, Map<String, ArrayList<Map<String, Integer>>> indexIndirect)
+	{
+		ArrayList<Map<String, Integer>> fisWord1 = new ArrayList<Map<String, Integer>>(indexIndirect.get(word1));
+		ArrayList<Map<String, Integer>> fisWord2 = new ArrayList<Map<String, Integer>>(indexIndirect.get(word2));
+		ArrayList<Map<String, Integer>> reunion = getArrayListReunion( fisWord1,fisWord2 );
+		System.out.println(word1 + "\n" + fisWord1.toString());
+		System.out.println(word2 + "\n" + fisWord2.toString());
+		
+		System.out.println("Reuniunea "+ reunion);
+		
+		return reunion;
+	}
+	public static ArrayList<Map<String, Integer>> getArrayListReunion(ArrayList<Map<String, Integer>> fisiereSet1, ArrayList<Map<String, Integer>> fisiereSet2){
+		ArrayList<Map<String, Integer>> reunion = new ArrayList<Map<String, Integer>>();
+		
+		for(int i=0;i<fisiereSet1.size();i++)
+		{
+			if(!reunion.contains(fisiereSet1.get(i)))
+			{
+				reunion.add(fisiereSet1.get(i));	
+			}
+		}
+		
+		for(int i=0;i<fisiereSet2.size();i++)
+		{
+			
+			if(!reunion.contains(fisiereSet2.get(i)))
+			{
+				reunion.add(fisiereSet2.get(i));
+			}
+		}
+		
+		return reunion;
+	}
+	
+	//fisierele care contin word1, dar nu contin word2
+	public static ArrayList<Map<String, Integer>> getDiferenta(String word1, String word2,  Map<String, ArrayList<Map<String, Integer>>> indexIndirect){
+		ArrayList<Map<String, Integer>> fisWord1 = new ArrayList<Map<String, Integer>>(indexIndirect.get(word1));
+		ArrayList<Map<String, Integer>> fisWord2 = new ArrayList<Map<String, Integer>>(indexIndirect.get(word2));
+		ArrayList<Map<String, Integer>> dif = getHashSetulDiferenta( fisWord1,fisWord2 );
+		System.out.println(word1 + "\n" + fisWord1.toString());
+		System.out.println(word2 + "\n" + fisWord2.toString());
+		
+		System.out.println("Diferenta: "+ dif);
+		return dif;
+	}
+	public static ArrayList<Map<String, Integer>> getHashSetulDiferenta(ArrayList<Map<String, Integer>> fisiereSet1, ArrayList<Map<String, Integer>> fisiereSet2){
+		ArrayList<Map<String, Integer>> dfr = new ArrayList<Map<String, Integer>>();
+		
+		if(fisiereSet1.size() < fisiereSet2.size()) 
+		{
+			for(int i=0;i<fisiereSet1.size();i++)
+			{
+				Map<String, Integer> fis = fisiereSet1.get(i);
+				if( !fisiereSet2.contains(fis) ) {
+					dfr.add(fis);
+				}
+			}
+		}else {
+			for(int i=0;i<fisiereSet2.size();i++)
+			{
+				Map<String, Integer> fis = fisiereSet2.get(i);
+				if(!fisiereSet1.contains(fis) ) {
+					dfr.add(fis);
+				}
+			}
+		}
+		return dfr;
+	}
+		
 	public static void main(String[] args) throws IOException 
 	{	
+		File htmlFile = new File("E:\\FACULTATE\\An IV\\Sem II\\RIW\\RIW_LAB1\\index.html");
+		Document document = Jsoup.parse(htmlFile, "UTF-8", "");
 		PrintWriter writerID = new PrintWriter("indexDirect.txt", "UTF-8");
 		PrintWriter writerIID = new PrintWriter("indexIndirect.txt", "UTF-8");
-		File WD = new File("E:\\FACULTATE\\An IV\\Sem II\\RIW\\lab3riw\\RootDirectory");
-		File stopWords = new File("E:\\FACULTATE\\An IV\\Sem II\\RIW\\lab3riw\\stopwords.txt");
+		File WD = new File("E:\\FACULTATE\\An IV\\Sem II\\RIW\\lab4riw\\RootDirectory");
+		File stopWords = new File("E:\\FACULTATE\\An IV\\Sem II\\RIW\\lab4riw\\stopwords.txt");
 		
 		ArrayList<String> stopWordsList = new ArrayList<String>();
 		
@@ -281,9 +390,10 @@ public class Lab3
 		
 		indexIndirect = indexIndirectFunc(indexDirect);
 		writeToFileIndexIndirect(writerIID, indexIndirect);
-	
+		getIntersection("study", "jobs", indexIndirect);
+		getReunion("study", "jobs", indexIndirect);
+		getDiferenta("study", "jobs", indexIndirect);
 		writerIID.close();
 		writerID.close();
 	}
-
 }
