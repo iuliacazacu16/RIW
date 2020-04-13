@@ -194,4 +194,7 @@ other
 ought
 our
 ours
+over
+to
 while
+with

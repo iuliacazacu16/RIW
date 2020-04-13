@@ -1,5 +1,3 @@
-package lab2riw;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -25,7 +23,7 @@ import org.jsoup.nodes.Document;
 
 import edu.smu.tspell.wordnet.*; 
 
-public class ExtragereCuvinte2 
+public class Lab3 
 {
 	public static boolean isProperNoun(String w)
 	{
@@ -81,6 +79,24 @@ public class ExtragereCuvinte2
 			stopWordsList.add(sw.next());
 		}
 		return stopWordsList;
+	}
+	
+	public static void writeToFileIndexDirect(PrintWriter writerID, Map<String, Map<String,Integer>> index)
+	{
+		for (Map.Entry<String, Map<String,Integer>> entry : index.entrySet())
+		{			   
+		    writerID.printf("%s %s \n\n\n", entry.getKey(), entry.getValue());
+		    writerID.println("\n");
+		}
+	}
+	
+	public static void writeToFileIndexIndirect(PrintWriter writerID, Map<String, ArrayList<Map<String, Integer>>> index)
+	{
+		for (Map.Entry<String, ArrayList<Map<String, Integer>>> entry : index.entrySet())
+		{			   
+		    writerID.printf("%s %s \n\n\n", entry.getKey(), entry.getValue());
+		    writerID.println("\n");
+		}
 	}
 	
 	public static void writeToFileDict(PrintWriter writerD,ArrayList<String> dictionary)
@@ -140,11 +156,13 @@ public class ExtragereCuvinte2
 		writerE.close();
 		
 	}
-	
-	public static void clasifyWords(Queue<File> coadaProcesare, ArrayList<String> stopWordsList) throws FileNotFoundException, UnsupportedEncodingException
+	//la fel si pt dictionar(ca mai sus)
+	public static Map<String, Map<String,Integer>> clasifyWords(Queue<File> coadaProcesare, ArrayList<String> stopWordsList) throws FileNotFoundException, UnsupportedEncodingException
 	{
 		PrintWriter writerD = new PrintWriter("dictionary.txt", "UTF-8");
-		PrintWriter writerE = new PrintWriter("exception.txt", "UTF-8");		
+		PrintWriter writerE = new PrintWriter("exception.txt", "UTF-8");
+		Map<String, Map<String,Integer>> indexDirect=new HashMap<String, Map<String,Integer>>();		
+		ArrayList<String> paths = new ArrayList<String>();
 		ArrayList<String> exception = new ArrayList<String>();
 		
 		while(!coadaProcesare.isEmpty())
@@ -154,7 +172,7 @@ public class ExtragereCuvinte2
 			ArrayList<String> words = new ArrayList<String>();
 			File f=coadaProcesare.poll();
 			Scanner s = new Scanner(f);
-
+			Map<String, Integer> hmm=new HashMap<String,Integer>();
 			while (s.hasNext()){
 			    words.add(s.next());
 			}
@@ -180,6 +198,7 @@ public class ExtragereCuvinte2
 				{
 					//add to dict
 					dict.add(currentWord);
+					hmm.put(currentWord, 1);
 				}
 				
 			}
@@ -196,29 +215,75 @@ public class ExtragereCuvinte2
 			    writerD.printf("%s %d\n\n", entry.getKey(), entry.getValue());
 			    writerD.println("\n");
 			}
+			indexDirect.put(f.getPath(), dictionar);
 		}
 
 		writeToFileExcept(writerE, exception);
 		writerD.close();
 		writerE.close();
-
+		
+		return indexDirect;
+	}
+	public static Map<String, ArrayList<Map<String, Integer>>> indexIndirectFunc(Map<String, Map<String,Integer>> indexdirect)
+	{
+		Map<String, ArrayList<Map<String, Integer>>> indexIndirect = new HashMap<String, ArrayList<Map<String, Integer>>>();
+		Map<String,Integer> words=new HashMap<String, Integer>();
+		for (Map.Entry<String, Map<String,Integer>> entry : indexdirect.entrySet())
+		{
+			String path = entry.getKey();
+			words = entry.getValue();
+			for(Map.Entry<String,Integer> w : words.entrySet())
+			{
+				Map<String, Integer> pathAndNrAp = new HashMap<String, Integer>();
+				ArrayList<Map<String, Integer>> list=new ArrayList<Map<String, Integer>>();
+				if(indexIndirect.containsKey(w.getKey()))
+				{
+					list = indexIndirect.get(w.getKey());
+					pathAndNrAp.put(path, w.getValue());
+					list.add(pathAndNrAp);
+					indexIndirect.put(w.getKey(),list );
+				}
+				else
+				{
+					pathAndNrAp.put(path, w.getValue());
+					list.add(pathAndNrAp);
+					indexIndirect.put(w.getKey(),list );
+				}
+				
+			}
+		}
+		return indexIndirect;
+		
 	}
 	
 	public static void main(String[] args) throws IOException 
 	{	
-		File htmlFile = new File("E:\\FACULTATE\\An IV\\Sem II\\RIW\\RIW_LAB1\\index.html");
-		Document document = Jsoup.parse(htmlFile, "UTF-8", "");
-		File WD = new File("E:\\FACULTATE\\An IV\\Sem II\\RIW\\lab2riw\\RootDirectory");
-		File stopWords = new File("E:\\FACULTATE\\An IV\\Sem II\\RIW\\lab2riw\\stopwords.txt");
+		PrintWriter writerID = new PrintWriter("indexDirect.txt", "UTF-8");
+		PrintWriter writerIID = new PrintWriter("indexIndirect.txt", "UTF-8");
+		File WD = new File("E:\\FACULTATE\\An IV\\Sem II\\RIW\\lab3riw\\RootDirectory");
+		File stopWords = new File("E:\\FACULTATE\\An IV\\Sem II\\RIW\\lab3riw\\stopwords.txt");
+		
 		ArrayList<String> stopWordsList = new ArrayList<String>();
+		
 		Queue<File> coadaProcesare = new LinkedList<>();//coada pt fisiere
+		Map<String, Map<String,Integer>> indexDirect=new HashMap<String, Map<String,Integer>>();
+		Map<String, ArrayList<Map<String, Integer>>> indexIndirect=new HashMap<String, ArrayList<Map<String, Integer>>>();
 		Scanner sw = new Scanner(stopWords);
+		
 		System.setProperty("wordnet.database.dir", "D:\\wordnet\\WordNet.Net-3.1-master\\WordNet.Net-3.1-master\\WordNet-3.0\\dict\\");
 		
 		coadaProcesare=getAllFiles(WD);
 		printFilesName(coadaProcesare);
 		stopWordsList=getStopWords(sw);
-		clasifyWords(coadaProcesare,stopWordsList);
+		
+		indexDirect=clasifyWords(coadaProcesare,stopWordsList);
+		writeToFileIndexDirect(writerID, indexDirect);
+		
+		indexIndirect = indexIndirectFunc(indexDirect);
+		writeToFileIndexIndirect(writerIID, indexIndirect);
+	
+		writerIID.close();
+		writerID.close();
 	}
 
 }
