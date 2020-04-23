@@ -21,9 +21,14 @@ import java.util.stream.Stream;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
+import com.mongodb.MongoClient;
+import com.mongodb.MongoException;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+
 import edu.smu.tspell.wordnet.*; 
 
-public class Laborator4 
+public class Proiect1 
 {
 	public static boolean isProperNoun(String w)
 	{
@@ -197,6 +202,9 @@ public class Laborator4
 				else
 				{
 					//add to dict
+					//forma canonica v
+					//(getBaseForm(
+					currentWord = getBaseForm(currentWord);
 					dict.add(currentWord);
 					hmm.put(currentWord, 1);
 				}
@@ -256,13 +264,13 @@ public class Laborator4
 		
 	}
 	
-	public static ArrayList<Map<String, Integer>> getIntersection(String word1, String word2, Map<String, ArrayList<Map<String, Integer>>> indexIndirect)
+	public static ArrayList<Map<String, Integer>> getIntersection(String word1, String word2, Map<String, ArrayList<Map<String, Integer>>> indIndirect)
 	{
-		ArrayList<Map<String, Integer>> fisWord1 = new ArrayList<Map<String, Integer>>(indexIndirect.get(word1));
-		ArrayList<Map<String, Integer>> fisWord2 = new ArrayList<Map<String, Integer>>(indexIndirect.get(word2));
+		ArrayList<Map<String, Integer>> fisWord1 = new ArrayList<Map<String, Integer>>(indIndirect.get(word1));
+		ArrayList<Map<String, Integer>> fisWord2 = new ArrayList<Map<String, Integer>>(indIndirect.get(word2));
 		ArrayList<Map<String, Integer>> intersectia = getArrayListIntersectie( fisWord1,fisWord2 );
-		System.out.println(word1 + "\n" + fisWord1.toString());
-		System.out.println(word2 + "\n" + fisWord2.toString());
+		System.out.println("Cuvantul " + word1 + " -> " + fisWord1.toString());
+		System.out.println("Cuvantul " + word2 + " -> " + fisWord2.toString());
 		
 		System.out.println("Intersectia: "+ intersectia);
 		
@@ -298,8 +306,8 @@ public class Laborator4
 		ArrayList<Map<String, Integer>> fisWord1 = new ArrayList<Map<String, Integer>>(indexIndirect.get(word1));
 		ArrayList<Map<String, Integer>> fisWord2 = new ArrayList<Map<String, Integer>>(indexIndirect.get(word2));
 		ArrayList<Map<String, Integer>> reunion = getArrayListReunion( fisWord1,fisWord2 );
-		System.out.println(word1 + "\n" + fisWord1.toString());
-		System.out.println(word2 + "\n" + fisWord2.toString());
+		System.out.println("Cuvantul " + word1 + " -> " + fisWord1.toString());
+		System.out.println("Cuvantul " + word2 + " -> " + fisWord2.toString());
 		
 		System.out.println("Reuniunea "+ reunion);
 		
@@ -329,20 +337,20 @@ public class Laborator4
 	}
 	
 	//fisierele care contin word1, dar nu contin word2
-	public static ArrayList<Map<String, Integer>> getDiferenta(String word1, String word2,  Map<String, ArrayList<Map<String, Integer>>> indexIndirect){
+	public static ArrayList<Map<String, Integer>> getDiff(String word1, String word2,  Map<String, ArrayList<Map<String, Integer>>> indexIndirect){
 		ArrayList<Map<String, Integer>> fisWord1 = new ArrayList<Map<String, Integer>>(indexIndirect.get(word1));
 		ArrayList<Map<String, Integer>> fisWord2 = new ArrayList<Map<String, Integer>>(indexIndirect.get(word2));
-		ArrayList<Map<String, Integer>> dif = getHashSetulDiferenta( fisWord1,fisWord2 );
-		System.out.println(word1 + "\n" + fisWord1.toString());
-		System.out.println(word2 + "\n" + fisWord2.toString());
+		ArrayList<Map<String, Integer>> dif = getArrayListDiff( fisWord1,fisWord2 );
+		System.out.println("Cuvantul " + word1 + " -> " + fisWord1.toString());
+		System.out.println("Cuvantul " + word2 + " -> " + fisWord2.toString());
 		
 		System.out.println("Diferenta: "+ dif);
 		return dif;
 	}
-	public static ArrayList<Map<String, Integer>> getHashSetulDiferenta(ArrayList<Map<String, Integer>> fisiereSet1, ArrayList<Map<String, Integer>> fisiereSet2){
+	public static ArrayList<Map<String, Integer>> getArrayListDiff(ArrayList<Map<String, Integer>> fisiereSet1, ArrayList<Map<String, Integer>> fisiereSet2){
 		ArrayList<Map<String, Integer>> dfr = new ArrayList<Map<String, Integer>>();
 		
-		if(fisiereSet1.size() < fisiereSet2.size()) 
+		if(fisiereSet1.size() <= fisiereSet2.size()) 
 		{
 			for(int i=0;i<fisiereSet1.size();i++)
 			{
@@ -362,15 +370,56 @@ public class Laborator4
 		}
 		return dfr;
 	}
+	static void cautareBooleana(String words, Map<String, ArrayList<Map<String, Integer>>> indexIndirect)
+	{
+		String[] w = words.split("\\s+");
+		String w1 = w[0];
+		String w2 = w[1];
+		if(w2.contains("+"))
+		{
+			String wo[] = w2.split("\\+");
+			w2=wo[1];
+			getIntersection(w1, w2, indexIndirect);
+		}
+		else if(w2.contains("-"))
+		{
+			String wo[] = w2.split("\\-");
+			w2=wo[1];
+			getDiff(w1, w2, indexIndirect);
+		}
+		else
+		{
+			getReunion(w1, w2, indexIndirect);
+		}
+	}
+	static String getBaseForm(String word)
+	{
+		//utilizarea algoritmului Porter
+		Stemmer s = new Stemmer();
+		for(int i=0;i<word.length();i++)
+		{
+			 char ch = word.charAt(i);
+			 if (Character.isLetter((char) ch))
+			 {
+				 s.add(ch);
+			 }
+		}
+		s.stem();
+		String u=s.toString();
+		//System.out.println(u);
+		return u;
+	}
 		
 	public static void main(String[] args) throws IOException 
 	{	
-		File htmlFile = new File("E:\\FACULTATE\\An IV\\Sem II\\RIW\\RIW_LAB1\\index.html");
-		Document document = Jsoup.parse(htmlFile, "UTF-8", "");
 		PrintWriter writerID = new PrintWriter("indexDirect.txt", "UTF-8");
 		PrintWriter writerIID = new PrintWriter("indexIndirect.txt", "UTF-8");
-		File WD = new File("E:\\FACULTATE\\An IV\\Sem II\\RIW\\lab4riw\\RootDirectory");
-		File stopWords = new File("E:\\FACULTATE\\An IV\\Sem II\\RIW\\lab4riw\\stopwords.txt");
+		System.out.println("Introdu numele directorului cu fisiere (RootDirectory): ");
+		Scanner in = new Scanner(System.in); 
+        String pathWD = in.nextLine(); 
+		pathWD = "E:\\FACULTATE\\An IV\\Sem II\\RIW\\Proiect1_riw\\"+ pathWD;
+		File WD = new File(pathWD);
+		File stopWords = new File("E:\\FACULTATE\\An IV\\Sem II\\RIW\\RIW_LAB2\\stopwords.txt");
 		
 		ArrayList<String> stopWordsList = new ArrayList<String>();
 		
@@ -380,8 +429,27 @@ public class Laborator4
 		Scanner sw = new Scanner(stopWords);
 		
 		System.setProperty("wordnet.database.dir", "D:\\wordnet\\WordNet.Net-3.1-master\\WordNet.Net-3.1-master\\WordNet-3.0\\dict\\");
-		
+		System.out.println(" ");
+		/*
+		MongoClient mongoClient = null;
+        try {
+            mongoClient = new MongoClient( "127.0.0.1" , 27017 );
+ 
+            System.out.println("Connected to MongoDB!\n");
+        } catch (MongoException e) {
+            e.printStackTrace();
+        } finally {
+            if(mongoClient!=null)
+                mongoClient.close();
+        }
+        
+        MongoDatabase database = mongoClient.getDatabase("mydb");
+        MongoCollection<org.bson.Document> collection = database.getCollection("test");
+        //org.bson.Document doc = new org.bson.Document("name", "MongoDB")
+        //		.append(key, value)
+		*/
 		coadaProcesare=getAllFiles(WD);
+		System.out.println("\nAfisare cale fisiere existente: ");
 		printFilesName(coadaProcesare);
 		stopWordsList=getStopWords(sw);
 		
@@ -390,10 +458,19 @@ public class Laborator4
 		
 		indexIndirect = indexIndirectFunc(indexDirect);
 		writeToFileIndexIndirect(writerIID, indexIndirect);
-		getIntersection("study", "jobs", indexIndirect);
-		getReunion("study", "jobs", indexIndirect);
-		getDiferenta("study", "jobs", indexIndirect);
+		
 		writerIID.close();
 		writerID.close();
+		System.out.println("\n\nCautare booleana (ex: job +run sau job -run sau job run):");
+		
+		while(true)
+		{
+			Scanner sc = new Scanner(System.in); 
+	        String words = sc.nextLine();
+	        if(words.equals("no")) break;
+	        cautareBooleana(words, indexIndirect);
+	        System.out.println("\nAlta cautare?");
+		}
+		System.out.println("\n\nSfarsit cautare.");
 	}
 }

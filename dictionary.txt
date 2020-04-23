@@ -1,248 +1,164 @@
-however 1
+which 1
 
 
 
-aims 1
+engin 1
 
 
 
-months 2
+city 1
 
 
 
-half 1
+year 1
 
 
 
-six 1
+fuel 1
 
 
 
-within 1
+beat 1
 
 
 
-additional 1
+run 1
 
 
 
-office 1
+presenc 1
 
 
 
-increase 1
+out 1
 
 
 
-percent 1
+second 1
 
 
 
-years 1
+which 1
 
 
 
-resulting 1
+hello 1
 
 
 
-the 1
+ 1
 
 
 
-answer 1
+engin 1
 
 
 
-application 1
+data 1
 
 
 
-there 1
+seven 1
 
 
 
-20 1
+ïIndeedâ 1
 
 
 
-10 1
+out 2
 
 
 
-applications 1
+that 1
 
 
 
-needed 1
+top 1
 
 
 
-use 1
+review 1
 
 
 
-automatically 1
+came 1
 
 
 
-available 1
+rank 1
 
 
 
-promise 1
+ten 1
 
 
 
-tools 1
+which 1
 
 
 
-research 1
+tech 1
 
 
 
-skills 1
+though 1
 
 
 
-firm 1
+also 1
 
 
 
-correctly 1
+list 1
 
 
 
-scant 1
+differ 1
 
 
 
-productivity 1
+satisfact 1
 
 
 
-consider 1
+confirm 1
 
 
 
-investing 1
+site 1
 
 
 
-trillion 1
+includ 1
 
 
 
-key 1
+among 1
 
 
 
-using 1
+front 1
 
 
 
-will 1
+job 4
 
 
 
-consulting 1
+over 1
 
 
 
-was 1
+next 1
 
 
 
-them 1
+anytim 1
 
 
 
-technology 1
-
-
-
-increase 1
-
-
-
-people 1
-
-
-
-canâ€™t 1
-
-
-
-intelligence 1
-
-
-
-technologies 1
-
-
-
-the 1
-
-
-
-artificial 1
-
-
-
-what 1
-
-
-
-piece 1
-
-
-
-there 1
-
-
-
-full 1
-
-
-
-study 1
-
-
-
-keywords 1
-
-
-
-learning 1
-
-
-
-skilled 1
-
-
-
-companies 1
-
-
-
-looks 1
-
-
-
-prior 1
-
-
-
-up 1
-
-
-
-hunting 1
-
-
-
-those 1
+which 1
 
 
 
@@ -250,51 +166,31 @@ new 1
 
 
 
-efficiency 1
+indic 1
 
 
 
-art 1
+cost 1
 
 
 
-process 1
+pundit 1
 
 
 
-cases 1
+will 1
 
 
 
-like 1
+soon 1
 
 
 
-effectively 1
+out 1
 
 
 
-past 2
-
-
-
-this 1
-
-
-
-enough 1
-
-
-
-tool 2
-
-
-
-intelligence 1
-
-
-
-technologies 1
+congest 1
 
 
 
@@ -302,87 +198,35 @@ the 1
 
 
 
-artificial 1
+regularly 1
 
 
 
-adopt 1
+that 2
 
 
 
-machine 1
+take 1
 
 
 
-ï»¿as 1
+ïWhile 1
 
 
 
-employees 2
+predict 1
 
 
 
-automates 1
+to 1
 
 
 
-employers 1
+drive 1
 
 
 
-likely 1
-
-
-
-jobs 1
-
-
-
-tools 1
-
-
-
-intelligence 1
-
-
-
-increases 1
-
-
-
-the 1
-
-
-
-such 1
-
-
-
-fast 1
-
-
-
-era 1
-
-
-
-left 1
-
-
-
-ï»¿thinking 1
-
-
-
-rejoice 1
-
-
-
-time 1
-
-
-
-takes 1
+region 1
 
 
 

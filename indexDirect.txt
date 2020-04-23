@@ -1,19 +1,19 @@
-E:\FACULTATE\An IV\Sem II\RIW\lab4riw\RootDirectory\dir2\dir4\fis4.txt {needed=1, use=1, automatically=1, available=1, promise=1, tools=1, research=1, skills=1, firm=1, correctly=1, scant=1, productivity=1, consider=1, investing=1, trillion=1, key=1, using=1, will=1, consulting=1, was=1, them=1, technology=1, increase=1, people=1, canâ€™t=1, intelligence=1, technologies=1, the=1, artificial=1, what=1, piece=1, there=1, full=1} 
+E:\FACULTATE\An IV\Sem II\RIW\Proiect1_riw\RootDirectory\dir2\fis3.txt {which=1, engin=1, city=1, year=1, fuel=1, beat=1, run=1, presenc=1, out=1, second=1} 
 
 
 
 
-E:\FACULTATE\An IV\Sem II\RIW\lab4riw\RootDirectory\dir2\fis3.txt {however=1, aims=1, months=2, half=1, six=1, within=1, additional=1, office=1, increase=1, percent=1, years=1, resulting=1, the=1, answer=1, application=1, there=1, 20=1, 10=1, applications=1} 
+E:\FACULTATE\An IV\Sem II\RIW\Proiect1_riw\RootDirectory\dir2\dir4\fis4.txt {which=1, hello=1} 
 
 
 
 
-E:\FACULTATE\An IV\Sem II\RIW\lab4riw\RootDirectory\dir1\dir3\fis1.txt {study=1, keywords=1, learning=1, skilled=1, companies=1, looks=1, prior=1, up=1, hunting=1, those=1, new=1, efficiency=1, art=1, process=1, cases=1, like=1, effectively=1, past=2, this=1, enough=1, tool=2, intelligence=1, technologies=1, the=1, artificial=1, adopt=1, machine=1, ï»¿as=1, employees=2, automates=1} 
+E:\FACULTATE\An IV\Sem II\RIW\Proiect1_riw\RootDirectory\dir1\dir3\fis1.txt {=1, engin=1, data=1, seven=1, ïIndeedâ=1, out=2, that=1, top=1, review=1, came=1, rank=1, ten=1, which=1, tech=1, though=1, also=1, list=1, differ=1, satisfact=1, confirm=1, site=1, includ=1, among=1, front=1, job=4} 
 
 
 
 
-E:\FACULTATE\An IV\Sem II\RIW\lab4riw\RootDirectory\dir1\dir3\fis2.txt {employers=1, likely=1, jobs=1, tools=1, intelligence=1, increases=1, the=1, such=1, fast=1, era=1, left=1, ï»¿thinking=1, rejoice=1, time=1, takes=1} 
+E:\FACULTATE\An IV\Sem II\RIW\Proiect1_riw\RootDirectory\dir1\dir3\fis2.txt {over=1, next=1, anytim=1, which=1, new=1, indic=1, cost=1, pundit=1, will=1, soon=1, out=1, congest=1, the=1, regularly=1, that=2, take=1, ïWhile=1, predict=1, to=1, drive=1, region=1} 
 
 
 
